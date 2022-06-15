@@ -3,74 +3,15 @@ import { createSlice } from "@reduxjs/toolkit";
 export const expenseSlice = createSlice({
 	name: "expenses",
 	initialState: {
-		allExpenses: [
-			{
-				id: "e1",
-				description: "A pair of shoes",
-				amount: 59.99,
-				date: "2022-06-13",
-			},
-			{
-				id: "e2",
-				description: "A pair of trousers",
-				amount: 89.29,
-				date: "2022-06-12",
-			},
-			{
-				id: "e3",
-				description: "Some bananas",
-				amount: 5.99,
-				date: "2022-06-08",
-			},
-			{
-				id: "e4",
-				description: "A book",
-				amount: 14.99,
-				date: "2022-02-19",
-			},
-			{
-				id: "e5",
-				description: "A book",
-				amount: 18.59,
-				date: "2022-02-18",
-			},
-			{
-				id: "e6",
-				description: "A pair of shoes",
-				amount: 59.99,
-				date: "2021-12-19",
-			},
-			{
-				id: "e7",
-				description: "A pair of trousers",
-				amount: 89.29,
-				date: "2022-01-05",
-			},
-			{
-				id: "e8",
-				description: "Some bananas",
-				amount: 5.99,
-				date: "2021-12-10",
-			},
-			{
-				id: "e9",
-				description: "A book",
-				amount: 14.99,
-				date: "2022-02-19",
-			},
-			{
-				id: "e10",
-				description: "A book",
-				amount: 18.59,
-				date: "2022-02-18",
-			},
-		],
+		allExpenses: [],
 	},
 	reducers: {
 		addExpense: (state, action) => {
 			state.allExpenses.push(action.payload);
 		},
-
+		setExpenses: (state, action) => {
+			state.allExpenses = action.payload;
+		},
 		deleteExpense: (state, action) => {
 			state.allExpenses = state.allExpenses.filter(
 				(expense) => expense.id !== action.payload
@@ -93,7 +34,7 @@ export const expenseSlice = createSlice({
 	},
 });
 
-export const { addExpense, deleteExpense, updateExpense } =
+export const { addExpense, deleteExpense, updateExpense, setExpenses } =
 	expenseSlice.actions;
 
 export default expenseSlice.reducer;

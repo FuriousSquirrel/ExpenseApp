@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
 		fontSize: 16,
 		marginBottom: 4,
 		fontWeight: "bold",
+		maxWidth: "80%",
 	},
 	amountContainer: {
 		paddingHorizontal: 12,
